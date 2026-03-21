@@ -37,7 +37,7 @@
     overflow-x: hidden;
   }
 
-  .hname, .sec-title, .appr-title, .svc-title, .fb, .nav-brand {
+  .hname, .sec-title, .appr-title, .svc-title, .fb {
     font-family: "Rubik", sans-serif;
   }
 
@@ -49,15 +49,11 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(180,155,120,.18);
     padding: .85rem 6vw;
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: center; align-items: center;
   }
-  .nav-brand {
-    font-size: 1.1rem; font-weight: 600;
-    color: var(--bark); text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 1.6rem; list-style: none; flex-wrap: wrap; }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; flex-wrap: wrap; justify-content: center; }
   .nav-links a {
-    font-size: .85rem; font-weight: 400;
+    font-size: .9rem; font-weight: 500;
     color: var(--muted); text-decoration: none;
     transition: color .2s;
   }
@@ -187,9 +183,10 @@
   .about-bottom p:last-child { margin-bottom: 0; }
 
   @media (max-width: 680px) {
-    .about-top { flex-direction: column-reverse; align-items: center; text-align: center; }
-    .about-text-top { text-align: center; }
-    .about-bottom { text-align: center; }
+    .about-top { flex-direction: column-reverse; align-items: flex-start; }
+    .about-text-top { text-align: right; width: 100%; }
+    .about-bottom { text-align: right; width: 100%; }
+    .about-photo-small { align-self: center; margin-bottom: 1.5rem; }
   }
 
   /* ────── APPROACH ────── */
@@ -344,7 +341,6 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-brand">אלה קורילן</a>
   <ul class="nav-links">
     <li><a href="#about">מי אני?</a></li>
     <li><a href="#approach">גישה מאששת מגוון</a></li>
@@ -399,7 +395,7 @@
   <div class="appr-grid">
     <div class="appr-card">
       <div class="appr-title">פרדיגמת המגוון הנוירולוגי</div>
-      <div class="appr-body"><span class="kw">Neurodiversity Paradigm</span> רואה בשונות נוירו-קוגניטיבית (כגון אוטיזם, ADHD, דיסלקציה ועוד) <span class="kw">ביטוי טבעי ובעל ערך</span> של המגוון האנושי.</div>
+      <div class="appr-body"><span class="kw">Neurodiversity Paradigm</span> רואה בשונות נוירו-קוגניטיבית (כגון אוטיזם, ADHD, דיסלקציה ועוד) ביטוי <span class="kw">טבעי ובעל ערך</span> של המגוון האנושי.</div>
     </div>
     <div class="appr-card">
       <div class="appr-title">המודל המאשש למוגבלות</div>
@@ -426,11 +422,11 @@
         <div class="svc-icon ic-b">🌱</div>
         <div class="svc-title">שייכות וזהות אוטיסטית:<br>קבוצות חברתיות</div>
       </div>
-      <div class="svc-body">קבוצות חברתיות לילדים.ות ונערים.ות אוטיסטים.ות בהוד השרון</div>
+      <div class="svc-body">קבוצות חברתיות לילדים.ות ונערים.ות אוטיסטים.ות <strong>בהוד השרון</strong></div>
       <div class="svc-inset">
         <p><strong>מטרות הקבוצה:</strong> ללמוד על אוטיזם מנקודת מבט חיובית ולחזק את הדימוי העצמי, להכיר מאפיינים אוטיסטיים מגוונים, לזהות חוזקות, רצונות, צרכים, ואתגרים אישיים — זאת באמצעות שיח פתוח ושימוש באמנות כדרך נוספת אפשרית לביטוי עצמי אותנטי.</p>
-        <p>הקבוצה מיועדת לילדים.ות / בני.ות נוער שיודעים.ות שהם.ן אוטיסטים.ות, שרוצים.ות לצאת למסע של גילוי עצמי, להכיר אוטיסטים.ות נוספים.ות, ולחזק את הביטחון ויכולת הייצוג העצמי.</p>
-        <p><strong>מנחות:</strong> אלה קורילן — אשת חינוך אוטיסטית | סוניה ליפשינוביץ׳ — מטפלת באמנות</p>
+        <p>הקבוצה מיועדת לילדים.ות / נוער שיודעים.ות שהם.ן אוטיסטים.ות, שרוצים.ות לצאת למסע של גילוי עצמי, להכיר אוטיסטים.ות נוספים.ות, ולחזק את הביטחון ויכולת הייצוג העצמי.</p>
+        <p><strong>מנחות:</strong> אלה קורילן — אשת חינוך אוטיסטית | סוניה ליפנוביץ' — מטפלת באמנות</p>
       </div>
       <div class="age-row">
         <span class="age-chip">ג'–ד'</span>
@@ -450,13 +446,13 @@
     <div class="svc-card reveal" id="consulting">
       <div class="svc-header">
         <div class="svc-icon ic-a">💻</div>
-        <div class="svc-title">ייעוץ פרטני בזום</div>
+        <div class="svc-title">ייעוץ פרטני</div>
       </div>
-      <div class="svc-body">ייעוץ חד-פעמי או ליווי מתמשך ומותאם אישית: להורים ומשפחות, לאוטיסטים.ות, ולאנשי מקצוע ומחקר.</div>
+      <div class="svc-body">ייעוץ חד-פעמי או ליווי מתמשך ומותאם אישית (בזום): להורים ומשפחות, לאוטיסטים.ות, ולא.נשי מקצוע ומחקר.</div>
       <div class="svc-inset">
-        <p><strong>להורים ומשפחות:</strong> הבנת "מערכת ההפעלה" והחוויה של הילד.ה, תמיכה ותיווך במערכת החינוך.</p>
-        <p><strong>לאוטיסטים.ות:</strong> העמקה בעקרונות תנועת המגוון, הכרות עם הקהילה.</p>
-        <p><strong>לאנשי מקצוע ומחקר:</strong> שותפות ונגישות בטיפול, בחינוך, ובמחקר.</p>
+        <p><strong>להורים ומשפחות:</strong> תהליך ליווי ותמיכה בהבנת המאפיינים והחוויה של הילד.ה; בניית סביבה תומכת ומכבדת, וכן ייצוג ותיווך מול מערכת החינוך.</p>
+        <p><strong>לאוטיסטים.ות:</strong> מרחב למידה והעמקה בעקרונות תנועת המגוון הנוירולוגי והקהילה האוטיסטית, מקום בטוח לחשיבה משותפת ושיח סביב דילמות, התלבטויות וצמתי קבלת החלטות.</p>
+        <p><strong>לא.נשי מקצוע ומחקר:</strong> יישום עקרונות שותפות, נגישות ומגוון בטיפול, בחינוך, ובמחקר.</p>
       </div>
       <a href="https://wa.me/972548809212/?text=היי%20אלה,%0Aאשמח%20לפרטים%20לגבי%20יעוץ%20פרטני%20בזום.%20נושא%20הפניה:%20"
          target="_blank" class="wa-btn">
