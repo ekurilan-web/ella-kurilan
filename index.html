@@ -119,6 +119,8 @@
     text-decoration: none;
     transition: transform .18s, box-shadow .18s;
     white-space: nowrap;
+    cursor: pointer;
+    border: none;
   }
   .btn:hover { transform: translateY(-2px); }
   .btn-fill { background: var(--clay); color: #fff; box-shadow: 0 5px 20px rgba(184,113,79,.26); }
@@ -226,15 +228,6 @@
     padding: .05em .3em; border-radius: 4px; font-weight: 500;
   }
 
-  .read-more {
-    display: inline-flex; align-items: center; gap: .35rem;
-    margin-top: 2.2rem; color: var(--clay);
-    font-size: .95rem; font-weight: 500; text-decoration: none;
-    border-bottom: 1.5px solid rgba(184,113,79,.3);
-    padding-bottom: 2px; transition: color .2s, border-color .2s;
-  }
-  .read-more:hover { color: var(--bark); border-color: var(--bark); }
-
   /* ────── SERVICES ────── */
   .services-sec { background: var(--off-white); }
   .svc-grid {
@@ -309,9 +302,68 @@
     text-decoration: none; width: fit-content;
     box-shadow: 0 4px 15px rgba(37,211,102,.22);
     transition: transform .18s, box-shadow .18s;
+    margin: auto auto 0 auto; 
   }
   .wa-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 22px rgba(37,211,102,.34); }
   .wi { width: 16px; height: 16px; fill: #fff; flex-shrink: 0; }
+
+  /* ────── CONTACT FORM ────── */
+  .contact-sec {
+    background: var(--cream);
+  }
+  
+  .contact-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(56,43,30,.06);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+    text-align: right;
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--bark);
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1.5px solid rgba(184,113,79,.2);
+    border-radius: 12px;
+    font-family: "Heebo", sans-serif;
+    font-size: 1rem;
+    background: var(--off-white);
+    transition: border-color 0.2s, background 0.2s;
+    color: var(--bark);
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: var(--clay);
+    background: #fff;
+  }
+
+  textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    padding: 1rem;
+  }
 
   /* ────── FOOTER ────── */
   footer {
@@ -322,19 +374,14 @@
   }
   .fb { font-size: 1.3rem; font-weight: 600; color: var(--sand); margin-bottom: 0.5rem;}
   .fs { font-size: 1rem; color: rgba(228,208,176,.6); max-width: 600px; line-height: 1.6;}
-  .fl {
-    color: var(--sand); font-size: 1rem; font-weight: 500;
-    text-decoration: none; transition: color .2s; display: block;
-    margin-top: 0.5rem;
-  }
-  .fl:hover { color: var(--clay); }
 
   @media (max-width: 580px) {
-    .sec, .approach-sec, .services-sec { padding: 4rem 5vw; }
+    .sec, .approach-sec, .services-sec, .contact-sec { padding: 4rem 5vw; }
     .hero { padding: 8rem 5vw 4rem; min-height: 55vh; }
     nav { padding: .75rem 5vw; }
     .nav-links { gap: .9rem; }
     footer { flex-direction: column; text-align: right; }
+    .contact-wrapper { padding: 2rem 1.5rem; }
   }
 </style>
 </head>
@@ -347,6 +394,7 @@
     <li><a href="#consulting">ייעוץ והדרכה</a></li>
     <li><a href="#groups">קבוצות חברתיות</a></li>
     <li><a href="#lectures">הרצאות וסדנאות</a></li>
+    <li><a href="#contact">יצירת קשר</a></li>
   </ul>
 </nav>
 
@@ -357,7 +405,7 @@
     <h1 class="hname">אלה קורילן</h1>
     <p class="hsub">ייעוץ והכשרה בגישה מאששת מגוון נוירולוגי</p>
     <div class="hero-btns">
-      <a href="mailto:e.kurilan@gmail.com" class="btn btn-fill">✉ יצירת קשר</a>
+      <a href="#contact" class="btn btn-fill">✉ יצירת קשר</a>
       <a href="https://wa.me/972548809212/?text=היי%20אלה,%0Aאשמח%20לפרטים%20לגבי%20יעוץ%20פרטני%20בזום.%20נושא%20הפניה:%20"
          target="_blank" class="btn btn-ring" style="border-color: var(--wa); color: var(--wa);">
         <svg class="wi" style="fill: var(--wa);" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741 1.199 1.179-3.647-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -395,7 +443,7 @@
   <div class="appr-grid">
     <div class="appr-card">
       <div class="appr-title">פרדיגמת המגוון הנוירולוגי</div>
-      <div class="appr-body"><span class="kw">Neurodiversity Paradigm</span> רואה בשונות נוירו-קוגניטיבית (כגון אוטיזם, ADHD, דיסלקציה ועוד) ביטוי <span class="kw">טבעי ובעל ערך</span> של המגוון האנושי.</div>
+      <div class="appr-body"><span class="kw">Neurodiversity Paradigm</span> רואה בשונות נוירו-קוגניטיבית (כגון אוטיזם, ADHD, דיסלקציה ועוד) ביטוי טבעי ובעל ערך של המגוון האנושי.</div>
     </div>
     <div class="appr-card">
       <div class="appr-title">המודל המאשש למוגבלות</div>
@@ -407,8 +455,10 @@
     </div>
   </div>
 
-  <a href="https://www.betipulnet.co.il/articles/%D7%9E%D7%9E%D7%95%D7%93%D7%A2%D7%95%D7%AA_%D7%9C%D7%90%D7%95%D7%98%D7%99%D7%96%D7%9D_%D7%9C%D7%94%D7%9B%D7%A8%D7%95%D7%AA_/"
-     target="_blank" class="read-more">לקריאה נוספת בטיפולנט →</a>
+  <div style="display: flex; justify-content: center; margin-top: 2rem;">
+    <a href="https://www.betipulnet.co.il/articles/%D7%9E%D7%9E%D7%95%D7%93%D7%A2%D7%95%D7%AA_%D7%9C%D7%90%D7%95%D7%98%D7%99%D7%96%D7%9D_%D7%9C%D7%94%D7%9B%D7%A8%D7%95%D7%AA_/"
+       target="_blank" class="btn btn-fill">לקריאה נוספת באתר טיפולנט</a>
+  </div>
 </section>
 
 <section class="sec services-sec reveal" id="services">
@@ -435,7 +485,7 @@
         <span class="age-chip">תיכון</span>
         <span class="age-chip">עד 5 משתתפים</span>
       </div>
-      <p style="font-size:.85rem;color:#6B5442;">לפרטים נוספים וקביעת מפגש היכרות: <strong>סוניה — 054-582-1356</strong></p>
+      <p style="font-size:.85rem;color:#6B5442; text-align: center; margin-top: 0.5rem;">לפרטים נוספים וקביעת מפגש היכרות: <strong>סוניה — 054-582-1356</strong></p>
       <a href="https://wa.me/972545821356/?text=היי%20סוניה,%0Aאשמח%20לפרטים%20לגבי%20קבוצה%20חברתית%20בהוד%20השרון"
          target="_blank" class="wa-btn">
         <svg class="wi" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741 1.199 1.179-3.647-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -452,7 +502,7 @@
       <div class="svc-inset">
         <p><strong>להורים ומשפחות:</strong> תהליך ליווי ותמיכה בהבנת המאפיינים והחוויה של הילד.ה; בניית סביבה תומכת ומכבדת, וכן ייצוג ותיווך מול מערכת החינוך.</p>
         <p><strong>לאוטיסטים.ות:</strong> מרחב למידה והעמקה בעקרונות תנועת המגוון הנוירולוגי והקהילה האוטיסטית, מקום בטוח לחשיבה משותפת ושיח סביב דילמות, התלבטויות וצמתי קבלת החלטות.</p>
-        <p><strong>לא.נשי מקצוע ומחקר:</strong> פיתוח פרקטיקות מיטיבות של חינוך מכליל, טיפול מאשש-מגוון, ומחקר משותף (Participatory research); דיון בסוגיות של אתיקה, שותפות, והנגשה.</p>
+        <p><strong>לא.נשי מקצוע ומחקר:</strong> יישום עקרונות שותפות, נגישות ומגוון בטיפול, בחינוך, ובמחקר.</p>
       </div>
       <a href="https://wa.me/972548809212/?text=היי%20אלה,%0Aאשמח%20לפרטים%20לגבי%20יעוץ%20פרטני%20בזום.%20נושא%20הפניה:%20"
          target="_blank" class="wa-btn">
@@ -483,6 +533,28 @@
       </a>
     </div>
 
+  </div>
+</section>
+
+<section class="sec contact-sec reveal" id="contact">
+  <div class="eyebrow" style="justify-content: center;">יצירת קשר</div>
+  <h2 class="sec-title" style="text-align: center;">נשמח לשמוע ממך</h2>
+  <div class="contact-wrapper">
+    <form action="https://formspree.io/f/mwvrjqye" method="POST">
+      <div class="form-group">
+        <label class="form-label" for="name">שם מלא</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">כתובת דוא"ל</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">הודעה</label>
+        <textarea id="message" name="message" class="form-control" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-fill submit-btn">שליחת הודעה</button>
+    </form>
   </div>
 </section>
 
