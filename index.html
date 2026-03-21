@@ -43,22 +43,23 @@
   .hname, .sec-title, .appr-title, .svc-title, .fb { font-family: "Rubik", sans-serif; }
 
   /* ──────────────────────────────────────────
-     NAV
+     NAV — DARK BROWN (like footer)
   ────────────────────────────────────────── */
   nav {
     position: fixed; top: 0; right: 0; left: 0; z-index: 200;
-    background: #F9F5EF;
-    border-bottom: 1px solid rgba(180,155,120,.3);
+    background: var(--bark);  /* changed from cream to dark brown */
+    border-bottom: 1px solid rgba(228,208,176,.25);
     padding: .75rem 6vw;
     display: flex; align-items: center; justify-content: space-between;
     transition: box-shadow .3s;
   }
-  nav.scrolled { box-shadow: 0 2px 20px rgba(56,43,30,.08); }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.2); }
 
   .nav-logo {
     font-family: "Rubik", sans-serif;
     font-weight: 600; font-size: 1rem;
-    color: var(--clay); text-decoration: none;
+    color: var(--sand);  /* light sand for contrast */
+    text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
     order: 2;
@@ -71,7 +72,8 @@
   }
   .nav-links a {
     font-size: .85rem; font-weight: 700;
-    color: #000; text-decoration: none;
+    color: #F2E5D5;  /* light beige, readable on dark */
+    text-decoration: none;
     padding: .2rem .1rem;
     border-bottom: 2px solid transparent;
     transition: color .2s, border-color .2s;
@@ -80,7 +82,7 @@
   .nav-links a:hover,
   .nav-links a.active { color: var(--clay); border-bottom-color: var(--clay); }
 
-  /* Hamburger */
+  /* Hamburger (dark theme) */
   .hamburger {
     display: none; flex-direction: column; gap: 5px;
     background: none; border: none; cursor: pointer; padding: 4px;
@@ -88,21 +90,22 @@
   }
   .hamburger span {
     display: block; width: 22px; height: 2px;
-    background: var(--bark); border-radius: 2px;
+    background: var(--sand);  /* light lines */
+    border-radius: 2px;
     transition: transform .3s, opacity .3s;
   }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Mobile nav drawer */
+  /* Mobile nav drawer — dark theme */
   .mobile-nav {
     display: none; position: fixed;
     top: 56px; right: 0; left: 0; z-index: 199;
-    background: rgba(249,245,239,.97);
+    background: rgba(56,43,30,.98); /* dark brown with high opacity */
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(180,155,120,.18);
+    border-bottom: 1px solid rgba(228,208,176,.2);
     padding: 1.2rem 6vw 1.5rem;
     transform: translateY(-12px); opacity: 0;
     transition: transform .28s ease, opacity .28s ease;
@@ -111,7 +114,7 @@
   .mobile-nav.open { transform: translateY(0); opacity: 1; pointer-events: all; }
   .mobile-nav ul { list-style: none; display: flex; flex-direction: column; gap: .8rem; }
   .mobile-nav a {
-    font-size: 1rem; font-weight: 500; color: var(--bark);
+    font-size: 1rem; font-weight: 500; color: var(--sand);
     text-decoration: none; padding: .3rem 0; display: block;
   }
   .mobile-nav a:hover { color: var(--clay); }
@@ -555,7 +558,7 @@
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- ── NAV (dark brown like footer) ── -->
 <nav id="navbar">
   <a href="#" class="nav-logo">אלה קורילן</a>
   <ul class="nav-links" id="navLinks">
@@ -648,7 +651,7 @@
 
   <div style="display: flex; justify-content: center; margin-top: 2.2rem;">
     <a href="https://www.betipulnet.co.il/articles/%D7%9E%D7%9E%D7%95%D7%93%D7%A2%D7%95%D7%AA_%D7%9C%D7%90%D7%95%D7%98%D7%99%D7%96%D7%9D_%D7%9C%D7%94%D7%9B%D7%A8%D7%95%D7%AA_/"
-       target="_blank" class="btn btn-fill">לקריאה נוספת באתר טיפולנט</a>
+       target="_blank" class="btn btn-fill">לקריאה נוספת באתר בטיפולנט</a>
   </div>
 </section>
 
